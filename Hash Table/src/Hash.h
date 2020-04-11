@@ -15,13 +15,17 @@ struct Item {
 
 class Hash {
     private:
-        static const int tableSize = 20;
+        static const int tableSize = 10;
         Item* HashTable[tableSize];
     public:
         Hash();
         int hash(const std::string &key);
         void AddItem(std::string name, std::string info);
-
+        int countBucket(int index);
+        void printHashTable();
+        void printItemsInBucket(int index);
+        void searchInfo(std::string name);
+        void removeItem(std::string name);
 };
 
 #endif
